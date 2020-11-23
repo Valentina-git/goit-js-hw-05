@@ -22,6 +22,27 @@ removeItem(item) -
 если он есть, 
 удаляет его из текущих */
 
+class Storage {
+  constructor(goods) {
+    this.goods = goods;
+  }
+  getItems() {
+    return this.goods;
+  }
+  addItem(item) {
+    // item.quantity = 1;
+    this.goods.push(item);
+  }
+  removeItem(item) {
+     for (let i = 0; i < this.goods.length; i += 1) {
+       const goods = this.goods[i];
+       if (item === goods.name) {
+         this.goods.splice(i, 1);
+        }
+     }
+   }
+}
+
 const storage = new Storage([
   'Нанитоиды',
   'Пролонгер',

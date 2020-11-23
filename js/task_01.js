@@ -7,7 +7,8 @@
 который выводит в консоль значения 
 полей login и email объекта который его вызвал. */
 
-const Account = function ({login, email}) {
+/**
+ * const Account = function ({login, email}) {
   this.login = login;
   this.email = email;
 }
@@ -30,3 +31,5 @@ const poly = new Account({
 
 mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
 poly.getInfo(); // Login: Poly, Email: poly@mail.com
+
+ */
