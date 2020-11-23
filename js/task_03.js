@@ -10,37 +10,26 @@
 
 Добавь методы класса:
 
-getItems() - 
-возвращает массив текущих товаров
+getItems() - возвращает массив текущих товаров
 
-addItem(item) - 
-получает новый товар 
-и добавляет его к текущим
+addItem(item) - получает новый товар и добавляет его к текущим
 
-removeItem(item) - 
-получет товар и, 
-если он есть, 
+removeItem(item) - получет товар и, если он есть, 
 удаляет его из текущих */
 
 class Storage {
-  constructor(goods) {
-    this.goods = goods;
+  constructor(items) {
+    this.items = items;
   }
   getItems() {
-    return this.goods;
+    return this.items;
   }
   addItem(item) {
-    // item.quantity = 1;
-    this.goods.push(item);
+    this.items.push(item);
   }
   removeItem(item) {
-     for (let i = 0; i < this.goods.length; i += 1) {
-       const goods = this.goods[i];
-       if (item === goods.name) {
-         this.goods.splice(i, 1);
-        }
-     }
-   }
+    return this.items.includes(item) ? this.items.splice(this.items.indexOf(item), 1) : null;
+  }
 }
 
 const storage = new Storage([
@@ -51,10 +40,10 @@ const storage = new Storage([
 ]);
 
 const items = storage.getItems();
-console.table(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
+//console.table(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
 
 storage.addItem('Дроид');
-console.table(storage.items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
+//console.table(storage.items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
 
 storage.removeItem('Пролонгер');
 console.table(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
