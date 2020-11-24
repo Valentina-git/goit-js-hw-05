@@ -20,21 +20,21 @@
 
 class StringBuilder {
     constructor(str) {
-        this.value = str;
+        this._value = str;
     }
-    get newValue() {
-        return this.value;
+    get value() {
+        return this._value;
     }
     append(str) {
-        this.value += str;
+        this._value += str;
         return this;
     }
     prepend(str) {
-        this.value = str + this.value;
+        this._value = str + this._value;
         return this;
     }
     pad(str) {
-        this.value = str + this.value + str;
+        this._value = str + this._value + str;
         return this;
     }
 }
